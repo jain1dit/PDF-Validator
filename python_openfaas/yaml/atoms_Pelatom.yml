@@ -1,0 +1,69 @@
+provider:
+  name: faas
+  gateway: http://127.0.0.1:8080
+
+functions:
+  check-system:
+    lang: python
+    handler: ../atoms/ssh/check_system
+    image: check-system
+    environment:
+      read_timeout: 30s
+      write_timeout: 30s
+
+  json2html:
+    lang: python
+    handler: ../atoms/utils/json2html
+    image: json2html
+    environment:
+      read_timeout: 30s
+      write_timeout: 30s
+
+  extract-file-as-html:
+    lang: python
+    handler: ../atoms/utils/extract_file_as_html
+    image: extract-file-as-html
+    environment:
+      read_timeout: 30s
+      write_timeout: 30s
+
+  enviroment-security-details:
+    lang: python
+    handler: ../atoms/utils/enviroment_security_details
+    image: enviroment-security-details
+    environment:
+      read_timeout: 30s
+      write_timeout: 30s
+
+  retrieve-open-sessions:
+    lang: python
+    handler: ../atoms/database/manage_database_sessions/retrieve_open_sessions
+    image: retrieve-open-sessions
+    environment:
+      read_timeout: 30s
+      write_timeout: 30s
+
+  pdf-to-text:
+    lang: python
+    handler: ../atoms/utils/pdf-to-text
+    image: pdf-to-text
+    environment:
+      read_timeout: 30s
+      write_timeout: 30s
+
+  text-to-json-extract:
+    lang: python
+    handler: ../atoms/utils/text-to-json-extract
+    image: text-to-json-extract
+    environment:
+      read_timeout: 30s
+      write_timeout: 30s
+
+  get-db-to-json:
+    lang: python
+    handler: ../atoms/utils/get-db-to-json
+    image: get-db-to-json
+    environment:
+      read_timeout: 30s
+      write_timeout: 30s
+

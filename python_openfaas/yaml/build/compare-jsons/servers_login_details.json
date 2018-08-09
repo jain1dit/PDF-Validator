@@ -1,0 +1,21 @@
+{
+	"EXAMPLE-HOST": {
+		"USER": {
+			"ip": "10.120.6.6",
+			"user": "MYUSER",
+			"password": "MYPASSWORD"
+		}
+	},
+	"server1": {
+		"user1": {
+			"ip": "",
+			"user": "",
+			"password": ""
+		},
+		"example": {
+			"ip": "10.245.100.166",
+			"user": "myuser",
+			"password": "mypassword"
+		}
+	}
+}

@@ -1,0 +1,54 @@
+FROM python:3.7-stretch
+#FROM oraclelinux:7-slim
+## for ora client
+
+ENV ORACLE_HOME=/usr/lib/oracle/12.2/ \
+    LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/oracle/12.2/client64/lib \
+    PATH=$PATH:/usr/lib/oracle/instantclient_12_2
+
+RUN apt-get update && apt-get install -y \
+  unzip \
+  libaio-dev \
+  alien
+
+ADD oracle-instantclient*.rpm /tmp/
+#RUN  apt-get install alien 
+RUN  alien -i /tmp/oracle-instant*.rpm
+RUN  ldconfig
+
+ENV PATH=$PATH:/usr/lib/oracle/12.2/client64/bin
+
+# add alias to go so we don't need to provide compilation flags every time
+RUN ln -s $(find $ORACLE_HOME -name 'libclntsh.so.*') $ORACLE_HOME/libclntsh.so
+
+
+# Alternatively use ADD https:// (which will not be cached by Docker builder)
+ADD https://github.com/openfaas/faas/releases/download/0.8.0/fwatchdog  /usr/bin/fwatchdog 
+RUN chmod +x /usr/bin/fwatchdog
+
+WORKDIR /root/
+
+ADD ./app_login_details.json /usr/local/
+ADD ./database_login_details.json /usr/local/
+ADD ./servers_login_details.json /usr/local/
+COPY index.py           .
+COPY requirements.txt   .
+RUN pip install -r requirements.txt
+
+
+COPY function           function
+COPY lib  lib
+
+RUN touch ./function/__init__.py
+ENV PAYTHONPATH=${PAYTHONPATH}:lib
+WORKDIR /root/function/
+COPY function/requirements.txt	.
+RUN pip install -r requirements.txt
+
+WORKDIR /root/
+
+ENV fprocess="python3 index.py"
+
+HEALTHCHECK --interval=1s CMD [ -e /tmp/.lock ] || exit 1
+
+CMD ["/usr/bin/fwatchdog"]

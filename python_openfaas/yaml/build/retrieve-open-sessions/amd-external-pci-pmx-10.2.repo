@@ -1,0 +1,6 @@
+[illin3301.corp.amdocs.com_28080_nexus_content_repositories_amd-external-pci-pmx-10.2]
+name=added from: http://illin3301.corp.amdocs.com:28080/nexus/content/repositories/amd-external-pci-pmx-10.2/
+baseurl=http://illin3301.corp.amdocs.com:28080/nexus/content/repositories/amd-external-pci-pmx-10.2/
+enabled = 1
+gpgcheck=0
+proxy=_none_

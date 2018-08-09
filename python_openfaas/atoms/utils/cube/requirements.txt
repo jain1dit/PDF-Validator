@@ -1,0 +1,2 @@
+pdfminer3k
+paramiko

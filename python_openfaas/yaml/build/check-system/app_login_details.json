@@ -1,0 +1,24 @@
+{
+  "jesi-1": {
+    "server": "",
+    "ip": "",
+    "user": "admin",
+    "password": "admin",
+    "jvm":"",
+    "start_script":"",
+    "stop_script":"",
+    "app_log":"",
+    "server_log":""
+  },
+  "user1": {
+    "server": "",
+    "ip": "",
+    "user": "",
+    "password": "",
+    "jvm":"",
+    "start_script":"",
+    "stop_script":"",
+    "app_log":"",
+    "server_log":""
+  }
+}

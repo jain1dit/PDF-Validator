@@ -1,0 +1,6 @@
+projectKey=Project:Team0
+serverUrl=http://10.234.124.75:9000
+serverVersion=7.0.0.36138
+dashboardUrl=http://10.234.124.75:9000/dashboard/index/Project:Team0
+ceTaskId=AWTrY4LdtV4lL-8B8fV8
+ceTaskUrl=http://10.234.124.75:9000/api/ce/task?id=AWTrY4LdtV4lL-8B8fV8

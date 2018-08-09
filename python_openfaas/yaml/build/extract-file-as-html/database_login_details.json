@@ -1,0 +1,18 @@
+{
+  "dbuser1": {
+    "host":"",
+    "ip": "",
+    "port": "",
+    "sid": "",
+    "user": "SA",
+    "password": "SA"
+  },
+  "MYDATABASE": {
+    "host":"MYHOST",
+    "ip": "MYIP",
+    "port": "1521",
+    "sid": "MYSID",
+    "user": "MYDBUSER",
+    "password": "MYDBPASSWORD"
+  }
+}

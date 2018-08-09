@@ -1,0 +1,26 @@
+{
+	"field_details":[
+		{"entity":"Invoice Sequence Number",
+		"regex":"(?:Rechnungsnummer\\s*)(\\d{12})",
+		"db_col_name":"BILL_TEMP.INVOICE_SEQ_NO"
+		},
+		{"entity":"BAN",
+		"regex":"(?:Kundennummer\\s*)(\\d{8})",
+		"db_col_name":"BILL_TEMP.BAN"	
+		},
+		{"entity":"Amount",
+		"regex":"(?:Ihr Rechnungsbetrag ist:\\s*)(\\d*[,]\\d*)",
+		"db_col_name":"BILL_TEMP.CURR_CHARGE_AMT"		
+		}
+	],
+	"database_details":[
+		{"ip":"195.233.85.94",
+		"port":"7008",
+		"sid":"TKESX0",
+		"db_name":"EDAPP152",
+		"password":"EDAPP152",
+		"table_name":"BILL_TEMP",
+		"table_key":"INVOICE_SEQ_NO"
+		}
+	]
+}

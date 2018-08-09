@@ -1,0 +1,13 @@
+{
+	"field_details":[
+		{"entity":"Invoice Sequence Number",
+		"regex":"(?:Rechnungsnummer\\s*)(\\d{12})"
+		},
+		{"entity":"BAN",
+		"regex":"(?:Kundennummer\\s*)(\\d{8})"
+		},
+		{"entity":"Amount",
+		"regex":"(?:Ihr Rechnungsbetrag ist:\\s*)(\\d*[,]\\d*)"
+		}
+	]
+}
